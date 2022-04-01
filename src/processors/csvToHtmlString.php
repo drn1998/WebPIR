@@ -1,21 +1,20 @@
 <?php
 
-function csvToHtmlTable($csv) {
+function csvToHtmlString($csv) {
     $count = -2; // Check if generally true and ok
     $table = "";
     $rows = explode("\r\n", $csv);
 
-    $table .= "<table>";
+    $table .= "<p>";
   
     foreach($rows as &$row){
       $cells = str_getcsv($row, ",", '"');
-          $table .= "<tr>";
           foreach($cells as &$cell)
-                $table .= "<td>" . $cell . "</td>";
-      $table .= "</tr>";
+                $table .= . $cell . ", ";
+      $table .= "&nbsp;&bull;&nbsp;";
       $count++;
     }
-    $table .= "</table>";
+    $table .= "</p>";
     //$table = "<b>Number of elements: " . $count . "</b>" . $table;
     return $table;
 }
