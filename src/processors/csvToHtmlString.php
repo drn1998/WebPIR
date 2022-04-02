@@ -10,7 +10,7 @@ function csvToHtmlString($csv) {
     foreach($rows as &$row){
       $cells = str_getcsv($row, ",", '"');
       $body .= implode(", ", $cells);
-      $body .= "&nbsp;&bull;&nbsp;";
+      $body .= "&nbsp;&bull ";
       $count++;
     }
     $body .= "</p>";
