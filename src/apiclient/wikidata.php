@@ -18,6 +18,9 @@ function getUserAgentString() {
 
     $ua_string = "User-agent: bot/WebPIR " . $name . " (Tel: " . $tel . ", Fax: " . $fax . ") Notice: " . $notes;
 
+    if($name == "Firstname Lastname" || $tel == "123" || $fax == "123")
+      die('Config file has not been set correctly!');
+
     return $ua_string;
 }
 
