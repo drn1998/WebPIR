@@ -5,8 +5,10 @@ function isDownload($format) {
     case "htmltabled":
     case "htmlmarqueed":
       return TRUE;
+      break;
     default:
       return FALSE;
+      break;
   }
 }
 
