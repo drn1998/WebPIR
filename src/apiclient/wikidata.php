@@ -6,7 +6,7 @@ function getURL() {
     $url = $config["connection"]["URL"];
 
     if(!filter_var($url, FILTER_VALIDATE_URL))
-      die('Config file has not been set correctly: Invalid URL')
+      die('Config file has not been set correctly: Invalid URL');
 
     return $url;
 }
