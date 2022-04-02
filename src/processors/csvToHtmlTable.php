@@ -2,22 +2,22 @@
 
 function csvToHtmlTable($csv) {
     $count = -2; // Check if generally true and ok
-    $table = "";
+    $body = "";
     $rows = explode("\r\n", $csv);
 
-    $table .= "<table>";
-  
+    $body .= "<table>";
+
     foreach($rows as &$row){
       $cells = str_getcsv($row, ",", '"');
-          $table .= "<tr>";
+          $body .= "<tr>";
           foreach($cells as &$cell)
-                $table .= "<td>" . $cell . "</td>";
-      $table .= "</tr>";
+                $body .= "<td>" . $cell . "</td>";
+      $body .= "</tr>";
       $count++;
     }
-    $table .= "</table>";
+    $body .= "</table>";
     //$table = "<b>Number of elements: " . $count . "</b>" . $table;
-    return $table;
+    return $body;
 }
 
 ?>
