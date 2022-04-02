@@ -1,8 +1,8 @@
 <?php
 
-require('remove_accents.php');
+require_once('remove_accents.php');
 
-function encode($input) {	
+function encode($input) {
 	$code = array("sch" => "80",
 				  "ver" => "89",
 				  "ab" => "51",
@@ -61,7 +61,7 @@ function encode($input) {
 				  "y" => "967",
 				  "?" => "960",
 				  "!" => "961");
-	
+
 	$input = remove_accents($input);
 	$input = strtolower($input);
 	// Move to remove_accents

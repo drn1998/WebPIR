@@ -1,13 +1,13 @@
 <?php
 
-require('encode.php');
+require_once('encode.php');
 
 function pir_get($convert_to_pir) {
 	$result = array_fill(0, 5, null);
 
 	$output = "";
 	$encoded = encode($convert_to_pir) . '00000';	// Make sure its not empty while still neutral
-	
+
 	$encoded = str_split($encoded);
 
 	for($i = 0; $i < count($encoded); $i++) {
@@ -20,7 +20,7 @@ function pir_get($convert_to_pir) {
 
 	foreach($result as $digit)
 		$output .= $digit;
-	
+
 	return $output;
 }
 
