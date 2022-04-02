@@ -1,11 +1,13 @@
 <?php
 
-require('apiclient/wikidata.php');
-require('processors/csvToHtmlTable.php');
-require('processors/htmlTableToMarqueeTable.php');
-require('processors/csvFilterRowsByPIRcode.php');
+require_once('apiclient/wikidata.php');
+require_once('processors/csvFilterRowsByPIRcode.php');
+require_once('processors/csvToHtmlString.php');
+require_once('processors/csvToHtmlTable.php');
+require_once('processors/htmlStringToMarquee.php');
+require_once('processors/htmlTableToMarqueeTable.php');
 
-if($_POST["format"] == "htmldownload") {
+if($_POST["format"] == "htmltabled") {
 	$filename = 'table.html';
 	header('Content-disposition: attachment; filename=' . $filename);
 	header('Content-type: text/html');
