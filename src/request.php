@@ -24,8 +24,9 @@ if(isset($_POST["pir"]))
 switch($_POST["format"]) {
 	case "htmlmarquee":
 	case "htmlmarqueed":
+	  $htmlTitle = csvToHtmlTitleString($csv);
 		$htmlBody = csvToHtmlString($csv);
-		htmlStringToMarquee($htmlBody, $_POST["speed"]);
+		htmlStringToMarquee($htmlBody, $htmlTitle, $_POST["speed"]);
 		break;
 	case "htmltable":
 	case "htmltabled":
