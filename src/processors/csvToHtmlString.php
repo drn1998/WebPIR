@@ -16,4 +16,17 @@ function csvToHtmlString($csv) {
     return $body;
 }
 
+function csvToHtmlTitleString($csv) {
+    $body = "";
+    $rows = explode("\r\n", $csv);
+
+    $body .= "<p><strong>";
+
+    $body = str_getcsv($rows[0], ",", '"');
+
+    $body .= "</string></p>";
+
+    return $body;
+}
+
 ?>
