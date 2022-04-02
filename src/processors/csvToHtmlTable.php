@@ -16,7 +16,7 @@ function csvToHtmlTable($csv) {
       $count++;
     }
     $body .= "</table>";
-    //$table = "<b>Number of elements: " . $count . "</b>" . $table;
+    //$body = "<b>Number of elements: " . $count . "</b>" . $body;
     return $body;
 }
 
