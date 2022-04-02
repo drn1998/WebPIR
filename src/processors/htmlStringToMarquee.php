@@ -14,9 +14,9 @@ function htmlStringToMarquee($html, $title, $scroll_speed) {
             }
             </style>
         </head>
-        <body>' .
-
-        . '<marquee behavior="scroll" scrollamount="' . $scroll_speed . '" bgcolor="#000088" style="color: #FFFFFF;">' .
+        <body><p>' .
+        $title
+        . '</p><marquee behavior="scroll" scrollamount="' . $scroll_speed . '" bgcolor="#000088" style="color: #FFFFFF;">' .
             $html
             . '</marquee>
         </body>
