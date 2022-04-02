@@ -9,8 +9,10 @@
 			<textarea name="sparql" rows="20" cols="70"></textarea><br/>
 			<label for="format">Output format</label>
 		  	<select name="format">
-				<option value="html">Scrolling HTML table</option>
-				<option value="htmldownload">Scrolling HTML table (Download)</option>
+				<option value="htmltable">Scrolling HTML table</option>
+				<option value="htmltabled">Scrolling HTML table (Download)</option>
+        <option value="htmlmarquee">Scrolling HTML marquee</option>
+        <option value="htmlmarqueed">Scrolling HTML marquee (Download)</option>
 				<option value="txt">Formatted text file (not implemented)</option>
 				<option value="pdf">A4 PDF file (not implemented)</option>
                 <option value="wav">Text-to-speech WAV file (not implemented)</option>
