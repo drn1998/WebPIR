@@ -5,6 +5,9 @@ function getURL() {
 
     $url = $config["connection"]["URL"];
 
+    if(!filter_var($url, FILTER_VALIDATE_URL))
+      die('Config file has not been set correctly: Invalid URL')
+
     return $url;
 }
 
@@ -19,7 +22,7 @@ function getUserAgentString() {
     $ua_string = "User-agent: bot/WebPIR " . $name . " (Tel: " . $tel . ", Fax: " . $fax . ") Notice: " . $notes;
 
     if($name == "Firstname Lastname" || $tel == "123" || $fax == "123")
-      die('Config file has not been set correctly!');
+      die('Config file has not been set correctly: No contact data in User-agent string');
 
     return $ua_string;
 }
