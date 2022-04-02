@@ -7,8 +7,8 @@ require_once('processors/csvToHtmlTable.php');
 require_once('processors/htmlStringToMarquee.php');
 require_once('processors/htmlTableToMarqueeTable.php');
 
-if($_POST["format"] == "htmltabled") {
-	$filename = 'table.html';
+if(isDownload($_POST["format"])) {
+	$filename = 'output.html';	// How to give better file names?
 	header('Content-disposition: attachment; filename=' . $filename);
 	header('Content-type: text/html');
 }
@@ -18,8 +18,18 @@ $csv = wikidataGetCsvFromSparql($_POST["sparql"]);
 if(isset($_POST["pir"]))
     $csv = csvFilterRowsByPIRcode($csv, $_POST["pir"]);
 
-$htmlTable = csvToHtmlTable($csv);
+switch($_POST["format"]) {
+	case "htmlmarquee":
+	case "htmlmarqueed":
+		$htmlBody = csvToHtmlString($csv);
+		htmlStringToMarquee($htmlBody, $_POST["speed"]);
+		break;
+	case "htmltable":
+	case "htmltabled":
+		$htmlBody = csvToHtmlTable($csv);
+		htmlTableToMarqueeTable($htmlBody, $_POST["speed"]);
+		break;
+}
 
-htmlTableToMarqueeTable($htmlTable, $_POST["speed"]);
 
 ?>
