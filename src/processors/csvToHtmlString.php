@@ -9,7 +9,7 @@ function csvToHtmlString($csv) {
     foreach($rows as &$row){
       $cells = str_getcsv($row, ",", '"');
       $body .= implode(", ", $cells);
-      $body .= "&nbsp;&bull ";
+      $body .= "&nbsp;&bull; ";
     }
     $body .= "</p>";
 
@@ -20,11 +20,11 @@ function csvToHtmlTitleString($csv) {
     $body = "";
     $rows = explode("\r\n", $csv);
 
-    $body .= "<p><strong>";
+    $body .= "<strong>";
 
-    $body = str_getcsv($rows[0], ",", '"');
+    $body .= implode(", ", str_getcsv($rows[0], ",", '"'));
 
-    $body .= "</string></p>";
+    $body .= "</strong>";
 
     return $body;
 }
