@@ -15,7 +15,7 @@
         <option value="htmlmarqueed">Scrolling HTML marquee (Download)</option>
 				<option value="txt">Formatted text file (not implemented)</option>
 				<option value="pdf">A4 PDF file (not implemented)</option>
-                <option value="wav">Text-to-speech WAV file (not implemented)</option>
+        <option value="wav">Text-to-speech WAV file (not implemented)</option>
 		  	</select><br/>
 			<label for="speed">Speed of table: </label>
 			<input type="text" name="speed" value="5">
