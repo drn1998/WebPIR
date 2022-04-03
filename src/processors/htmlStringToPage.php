@@ -5,7 +5,7 @@ function htmlStringToPage($html, $title) {
     <!DOCTYPE html>
     <html>
         <head>
-            <title>Laufschrift-Beispiel</title>
+            <title>Request as static (print!) HTML page</title>
             <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
             <meta charset="utf-8"/>
             <style>

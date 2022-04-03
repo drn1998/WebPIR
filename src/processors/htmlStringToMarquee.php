@@ -5,7 +5,7 @@ function htmlStringToMarquee($html, $title, $scroll_speed) {
     <!DOCTYPE html>
     <html>
         <head>
-            <title>Laufschrift-Beispiel</title>
+            <title>Request as scrolling HTML string</title>
             <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
             <meta charset="utf-8"/>
             <style>
