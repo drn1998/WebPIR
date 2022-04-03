@@ -9,6 +9,7 @@ require_once('processors/csvToHtmlString.php');
 require_once('processors/csvToHtmlTable.php');
 require_once('processors/htmlStringToMarquee.php');
 require_once('processors/htmlTableToMarqueeTable.php');
+require_once('processors/htmlTableToPage.php');
 
 if(isDownload($_POST["format"])) {
 	$filename = 'output.html';	// How to give better file names?
@@ -33,6 +34,10 @@ switch($_POST["format"]) {
 		$htmlBody = csvToHtmlTable($csv);
 		htmlTableToMarqueeTable($htmlBody, $_POST["speed"]);
 		break;
+	case "htmlpage":
+		$htmlTitle = csvToHtmlTitleString($csv);
+		$htmlBody = csvToHtmlString($csv);
+		htmlStringToPage($htmlBody, $htmlTitle);
 }
 
 
