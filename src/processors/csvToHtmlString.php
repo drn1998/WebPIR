@@ -1,5 +1,7 @@
 <?php
 
+require_once('util/preventLinebreak.php');
+
 function csvToHtmlString($csv) {
     $body = "";
     $rows = explode("\r\n", $csv);
@@ -10,7 +12,9 @@ function csvToHtmlString($csv) {
       $cells = str_getcsv($row, ",", '"');
       foreach($cells as &$cell) {
         if($cell == "")
-          $cell = "(void)";
+          $cell = "&varnothing;";
+        else
+          $cell = preventLinebreak($cell);
       }
       $body .= implode(", ", $cells);
       $body .= "&nbsp;&bull; ";
