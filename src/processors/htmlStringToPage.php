@@ -9,8 +9,9 @@ function htmlStringToPage($html, $title) {
             <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
             <meta charset="utf-8"/>
             <style>
-            h1, p, marquee {
+            p {
                 font-family: sans-serif;
+                font-size: smaller;
             }
             </style>
         </head>
