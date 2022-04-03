@@ -5,3 +5,18 @@ The basic idea is to answer something by asking for a set of data that can unamb
 
 # Setup
 At this moment, it is sufficient to copy the content of the src directory into the webservers directory and have the server recognize "index.php" as the default page. You then have to edit the config file config/apiclient.ini to contain your name and phone/fax number to comply with the wikidata policy of providing contact data. The default values will not be accepted by this software and it will refuse a connection to the SPARQL endpoint. Please provide correct information so wikidata can contact you if the software or its amount of usage becomes an issue.
+
+# Contact
+
+Darius Runge  
+Postfach 3  
+72669 Unterensingen  
+GERMANY
+
+(registered mail is possible from most UPU-countries)
+
+Tel: 07022 5064970  
+Fax: 07022 5064971  
+Vox: 07022 5064998  (immediate connection to voice mail, without attempting to talk in person)
+
+E-Mail: contact@darius-runge.eu  
