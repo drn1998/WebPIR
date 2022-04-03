@@ -8,6 +8,10 @@ function csvToHtmlString($csv) {
 
     foreach($rows as &$row){
       $cells = str_getcsv($row, ",", '"');
+      foreach($cells as &$cell) {
+        if($cell = "")
+          $cell = "(void)";
+      }
       $body .= implode(", ", $cells);
       $body .= "&nbsp;&bull; ";
     }
