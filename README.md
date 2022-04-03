@@ -18,8 +18,8 @@ GERMANY
 
 (registered mail is possible from most UPU-countries)
 
-Tel: 07022 5064970  
-Fax: 07022 5064971  
-Vox: 07022 5064998  (immediate connection to voice mail, without attempting to talk in person)
+Tel: +49(0)7022 5064970  
+Fax: +49(0)7022 5064971  
+Vox: +49(0)7022 5064998  (immediate connection to voice mail, without attempting to talk in person)
 
 E-Mail: contact@darius-runge.eu  
