@@ -38,6 +38,8 @@ if($_POST["display"] == "mq" && $_POST["format"] == "htmltable") {
 } else if($_POST["display"] == "st" && $_POST["format"] == "htmlstring") {
 	$htmlTitle = csvToHtmlTitleString($csv);
 	htmlStringToPage($htmlBody, $htmlTitle);
+} else if($_POST["display"] == "st" && $_POST["format"] == "htmltable") {
+	htmlStringToPage($htmlBody, "Table");
 } else {
 	die("Not implemented or bad combination!");
 }
