@@ -13,7 +13,7 @@
         <option value="htmlstring">HTML String</option>
 		  	</select><br/>
       <fieldset>
-        <input type="radio" id="mq" name="display" value="mq">
+        <input type="radio" id="mq" name="display" value="mq" checked="checked">
         <label for="mq"> Marquee</label>
         <input type="radio" id="st" name="display" value="st">
         <label for="vi"> Static</label>
