@@ -30,6 +30,18 @@ button {
   font-size: 16px;
 }
 
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+label {
+  display: inline-block; width: 7em;
+}
+
 .article {
   width: 92%;
 	max-width: 72em;
