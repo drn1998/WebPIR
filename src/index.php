@@ -3,7 +3,7 @@
         <title>WebPIR</title>
         <link rel="stylesheet" href="style/form.css">
     </head>
-    <body>
+    <body class="article">
         <h1>WebPIR: Main request form</h1>
         <form method="post" action="request.php">
             <label for="sparql">SPARQL code of the request:</label><br/>
