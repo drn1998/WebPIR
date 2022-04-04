@@ -1,12 +1,13 @@
 <html>
     <head>
         <title>WebPIR</title>
+        <link rel="stylesheet" href="style/form.css">
     </head>
     <body>
         <h1>WebPIR: Main request form</h1>
         <form method="post" action="request.php">
             <label for="sparql">SPARQL code of the request:</label><br/>
-			<textarea name="sparql" rows="20" cols="70"></textarea><br/>
+			<textarea name="sparql"></textarea><br/>
 			<label for="format">Output format</label>
 		  	<select name="format">
 				<option value="htmltable">HTML Table</option>
