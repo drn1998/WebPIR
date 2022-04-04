@@ -8,7 +8,7 @@
         <h1>WebPIR: Main request form</h1>
         <form method="post" action="request.php">
             <label for="sparql">SPARQL code of the request:</label><br/>
-			<textarea name="sparql"></textarea><br/>
+			<textarea name="sparql" spellcheck="false"></textarea><br/>
 			<label for="format">Output format</label>
 		  	<select name="format">
 				<option value="htmltable">HTML Table</option>
