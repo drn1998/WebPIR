@@ -1,7 +1,7 @@
 <?php
 
 function getURL() {
-    $config = parse_ini_file("config/apiclient.ini", true);
+    $config = parse_ini_file("config/wikidata.ini", true);
 
     $url = $config["connection"]["URL"];
 
@@ -12,7 +12,7 @@ function getURL() {
 }
 
 function getUserAgentString() {
-    $config = parse_ini_file("config/apiclient.ini", true);
+    $config = parse_ini_file("config/wikidata.ini", true);
 
     $name = $config["user-agent"]["name"];
     $tel = $config["user-agent"]["tel"];
