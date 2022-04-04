@@ -12,20 +12,20 @@
 				<option value="htmltable">HTML Table</option>
         <option value="htmlstring">HTML String</option>
 		  	</select><br/>
-			<label for="speed">Speed of table: </label>
       <fieldset>
         <input type="radio" id="mq" name="display" value="mq">
         <label for="mq"> Marquee</label>
         <input type="radio" id="st" name="display" value="st">
         <label for="vi"> Static</label>
       </fieldset>
+      <label for="speed">Speed of table: </label>
 			<input type="text" name="speed" value="5">
 			<br/>
 			<label for="pir">1st column satisfies PIR code: </label>
 			<input type="text" name="pir" minlength="1" maxlength="5">
 			<br/>
-			<button type="submit" value="view">View</button>
-      <button type="submit" value="view">Download</button>
+			<button type="submit" name="load" value="view">View</button>
+      <button type="submit" name="load" value="download">Download</button>
         </form>
     </body>
 </html>
