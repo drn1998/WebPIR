@@ -1,6 +1,6 @@
 <?php
 
-require_once("../encode.php");
+require_once("../methods/encode.php");
 
 function test_encode($input, $expected_output) {
   $real_output = encode($input);
