@@ -17,7 +17,10 @@ if($_POST["load"] == "download") {
 	header('Content-type: text/html');
 }
 
-$csv = wikidataGetCsvFromSparql($_POST["sparql"]);
+if($_POST["api"] == "wikidata")
+	$csv = wikidataGetCsvFromSparql($_POST["script"]);
+else if($_POST["api"] == "osm")
+	$csv = openstreetmapGetCsvFromSparql($_POST["script"]);
 
 if(isset($_POST["pir"]))
     $csv = csvFilterRowsByPIRcode($csv, $_POST["pir"]);

@@ -7,8 +7,13 @@
     <body class="article">
         <h1>WebPIR: Main request form</h1>
         <form method="post" action="request.php">
-            <label for="sparql">SPARQL code of the request:</label><br/>
-			<textarea name="sparql" spellcheck="false"></textarea><br/>
+            <label for="script">Script of the request:</label><br/>
+			<textarea name="script" spellcheck="false"></textarea><br/>
+      <label for="format">API</label>
+        <select name="api">
+        <option value="wikidata">Wikidata/SPARQL</option>
+        <option value="osm">OpenStreetMap/OQL</option>
+        </select><br/>
 			<label for="format">Output format</label>
 		  	<select name="format">
 				<option value="htmltable">HTML Table</option>
