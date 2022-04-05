@@ -12,7 +12,7 @@
       <label for="format">API</label>
         <select name="api">
         <option value="wikidata">Wikidata/SPARQL</option>
-        <option value="osm">OpenStreetMap/OQL</option>
+        <option value="openstreetmap">OpenStreetMap/OQL</option>
         </select><br/>
 			<label for="format">Output format</label>
 		  	<select name="format">

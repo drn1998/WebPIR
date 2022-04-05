@@ -20,16 +20,16 @@ if($_POST["load"] == "download") {
 
 if($_POST["api"] == "wikidata")
 	$csv = wikidataGetCsvFromSparql($_POST["script"]);
-else if($_POST["api"] == "osm")
+else if($_POST["api"] == "openstreetmap")
 	$csv = openstreetmapGetCsvFromOql($_POST["script"]);
 
 if(isset($_POST["pir"]))
-    $csv = csvFilterRowsByPIRcode($csv, $_POST["pir"]);
+    $csv = csvFilterRowsByPIRcode($csv, $_POST["pir"], $_POST["api"]);
 
 if($_POST["format"] == "htmltable") {
-	$htmlBody = csvToHtmlTable($csv);
+	$htmlBody = csvToHtmlTable($csv, $_POST["api"]);
 } else if($_POST["format"] == "htmlstring") {
-	$htmlBody = csvToHtmlString($csv);
+	$htmlBody = csvToHtmlString($csv, $_POST["api"]);
 } else {
 	die("Invalid format set");
 }
@@ -37,10 +37,10 @@ if($_POST["format"] == "htmltable") {
 if($_POST["display"] == "mq" && $_POST["format"] == "htmltable") {
 	htmlTableToMarqueeTable($htmlBody, $_POST["speed"]);
 } else if($_POST["display"] == "mq" && $_POST["format"] == "htmlstring") {
-	$htmlTitle = csvToHtmlTitleString($csv);
+	$htmlTitle = csvToHtmlTitleString($csv, $_POST["api"]);
 	htmlStringToMarquee($htmlBody, $htmlTitle, $_POST["speed"]);
 } else if($_POST["display"] == "st" && $_POST["format"] == "htmlstring") {
-	$htmlTitle = csvToHtmlTitleString($csv);
+	$htmlTitle = csvToHtmlTitleString($csv, $_POST["api"]);
 	htmlStringToPage($htmlBody, $htmlTitle);
 } else if($_POST["display"] == "st" && $_POST["format"] == "htmltable") {
 	htmlStringToPage($htmlBody, "Table");

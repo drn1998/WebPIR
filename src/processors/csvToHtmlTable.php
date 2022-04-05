@@ -1,14 +1,14 @@
 <?php
 
-function csvToHtmlTable($csv) {
+function csvToHtmlTable($csv, $format) {
     $count = -2; // Check if generally true and ok
     $body = "";
-    $rows = explode("\r\n", $csv);
+    $rows = explode($conf["csv"]["line"], $csv);
 
     $body .= "<table>";
 
     foreach($rows as &$row){
-      $cells = str_getcsv($row, ",", '"');
+      $cells = str_getcsv($row, $conf["csv"]["field"], $conf["csv"]["except"]);
           $body .= "<tr>";
           foreach($cells as &$cell)
                 $body .= "<td>" . $cell . "</td>";

@@ -2,14 +2,15 @@
 
 require_once('util/preventLinebreak.php');
 
-function csvToHtmlString($csv) {
+function csvToHtmlString($csv, $format) {
     $body = "";
-    $rows = explode("\r\n", $csv);
+    $conf = parse_ini_file("config/" . $format . ".ini", true);
+    $rows = explode($conf["csv"]["line"], $csv);
 
     $body .= "<p>";
 
     foreach($rows as &$row){
-      $cells = str_getcsv($row, ",", '"');
+      $cells = str_getcsv($row, $conf["csv"]["field"], $conf["csv"]["except"]);
       foreach($cells as &$cell) {
         if($cell == "")
           $cell = "&varnothing;";
@@ -24,13 +25,13 @@ function csvToHtmlString($csv) {
     return $body;
 }
 
-function csvToHtmlTitleString($csv) {
+function csvToHtmlTitleString($csv, $format) {
     $body = "";
-    $rows = explode("\r\n", $csv);
+    $rows = explode($conf["csv"]["line"], $csv);
 
     $body .= "<strong>";
 
-    $body .= implode(", ", str_getcsv($rows[0], ",", '"'));
+    $body .= implode(", ", str_getcsv($rows[0], $conf["csv"]["field"], $conf["csv"]["except"]));
 
     $body .= "</strong>";
 
