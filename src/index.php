@@ -25,7 +25,7 @@
         <input type="radio" id="st" name="display" value="st">
         <label for="vi"> Static</label>
       </fieldset>
-      <label for="speed">Speed of table: </label>
+      <label for="speed">Speed of scrolling: </label>
 			<input type="text" name="speed" value="5">
 			<br/>
 			<label for="pir">1st column satisfies PIR code: </label>
