@@ -1,6 +1,7 @@
 <?php
 
 require_once('apiclient/wikidata.php');
+require_once('apiclient/openstreetmap.php');
 
 require_once('util/isDownload.php');
 
@@ -20,7 +21,7 @@ if($_POST["load"] == "download") {
 if($_POST["api"] == "wikidata")
 	$csv = wikidataGetCsvFromSparql($_POST["script"]);
 else if($_POST["api"] == "osm")
-	$csv = openstreetmapGetCsvFromSparql($_POST["script"]);
+	$csv = openstreetmapGetCsvFromOql($_POST["script"]);
 
 if(isset($_POST["pir"]))
     $csv = csvFilterRowsByPIRcode($csv, $_POST["pir"]);

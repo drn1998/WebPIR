@@ -27,7 +27,7 @@ function getUserAgentString() {
     return $ua_string;
 }
 
-function openstreetmapGetCsvFromSparql($script) {
+function openstreetmapGetCsvFromOql($script) {
     $client = curl_init();
 
     $request_headers = [];
