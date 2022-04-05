@@ -1,6 +1,6 @@
 <?php
 
-function getURL() {
+function SPARQLgetURL() {
     $config = parse_ini_file("config/wikidata.ini", true);
 
     $url = $config["connection"]["URL"];
@@ -11,7 +11,7 @@ function getURL() {
     return $url;
 }
 
-function getUserAgentString() {
+function SPAQRLgetUserAgentString() {
     $config = parse_ini_file("config/wikidata.ini", true);
 
     $name = $config["user-agent"]["name"];
@@ -32,8 +32,8 @@ function wikidataGetCsvFromSparql($script) {
 
     $request_headers = [];
     $request_headers[] = 'Accept: text/csv';
-    $request_headers[] = getUserAgentString();
-    curl_setopt($client, CURLOPT_URL, getURL());
+    $request_headers[] = SPARQLgetUserAgentString();
+    curl_setopt($client, CURLOPT_URL, SPARQLgetURL());
     curl_setopt($client, CURLOPT_POST, 1);
     curl_setopt($client, CURLOPT_HTTPHEADER, $request_headers);
     curl_setopt($client, CURLOPT_POSTFIELDS,

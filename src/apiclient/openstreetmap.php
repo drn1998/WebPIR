@@ -1,6 +1,6 @@
 <?php
 
-function getURL() {
+function OSMgetURL() {
     $config = parse_ini_file("config/openstreetmap.ini", true);
 
     $url = $config["connection"]["URL"];
@@ -11,7 +11,7 @@ function getURL() {
     return $url;
 }
 
-function getUserAgentString() {
+function OSMgetUserAgentString() {
     $config = parse_ini_file("config/openstreetmap.ini", true);
 
     $name = $config["user-agent"]["name"];
@@ -31,8 +31,8 @@ function openstreetmapGetCsvFromOql($script) {
     $client = curl_init();
 
     $request_headers = [];
-    $request_headers[] = getUserAgentString();
-    curl_setopt($client, CURLOPT_URL, getURL());
+    $request_headers[] = OSMgetUserAgentString();
+    curl_setopt($client, CURLOPT_URL, OSMgetURL());
     curl_setopt($client, CURLOPT_POST, 1);
     curl_setopt($client, CURLOPT_HTTPHEADER, $request_headers);
     curl_setopt($client, CURLOPT_POSTFIELDS,
