@@ -5,12 +5,12 @@ require_once('util/preventLinebreak.php');
 function csvToHtmlString($csv, $format) {
     $body = "";
     $conf = parse_ini_file("config/" . $format . ".ini", true);
-    $rows = explode($conf["csv"]["line"], $csv);
+    $rows = explode(stripcslashes($conf["csv"]["line"]), $csv);
 
     $body .= "<p>";
 
     foreach($rows as &$row){
-      $cells = str_getcsv($row, $conf["csv"]["field"], $conf["csv"]["except"]);
+      $cells = str_getcsv($row, stripcslashes($conf["csv"]["field"]), stripcslashes($conf["csv"]["except"]));
       foreach($cells as &$cell) {
         if($cell == "")
           $cell = "&varnothing;";
@@ -28,11 +28,11 @@ function csvToHtmlString($csv, $format) {
 function csvToHtmlTitleString($csv, $format) {
     $body = "";
     $conf = parse_ini_file("config/" . $format . ".ini", true);
-    $rows = explode($conf["csv"]["line"], $csv);
+    $rows = explode(stripcslashes($conf["csv"]["line"]), $csv);
 
     $body .= "<strong>";
 
-    $body .= implode(", ", str_getcsv($rows[0], $conf["csv"]["field"], $conf["csv"]["except"]));
+    $body .= implode(", ", str_getcsv($rows[0], stripcslashes($conf["csv"]["field"]), stripcslashes($conf["csv"]["except"]));
 
     $body .= "</strong>";
 
