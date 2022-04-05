@@ -32,7 +32,7 @@ function csvToHtmlTitleString($csv, $format) {
 
     $body .= "<strong>";
 
-    $body .= implode(", ", str_getcsv($rows[0], stripcslashes($conf["csv"]["field"]), stripcslashes($conf["csv"]["except"]));
+    $body .= implode(", ", str_getcsv($rows[0], stripcslashes($conf["csv"]["field"]), stripcslashes($conf["csv"]["except"])));
 
     $body .= "</strong>";
 
