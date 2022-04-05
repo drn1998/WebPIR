@@ -27,6 +27,7 @@ function csvToHtmlString($csv, $format) {
 
 function csvToHtmlTitleString($csv, $format) {
     $body = "";
+    $conf = parse_ini_file("config/" . $format . ".ini", true);
     $rows = explode($conf["csv"]["line"], $csv);
 
     $body .= "<strong>";
