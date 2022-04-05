@@ -11,7 +11,7 @@ function SPARQLgetURL() {
     return $url;
 }
 
-function SPAQRLgetUserAgentString() {
+function SPARQLgetUserAgentString() {
     $config = parse_ini_file("config/wikidata.ini", true);
 
     $name = $config["user-agent"]["name"];
