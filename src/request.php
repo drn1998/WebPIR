@@ -3,8 +3,6 @@
 require_once('apiclient/wikidata.php');
 require_once('apiclient/openstreetmap.php');
 
-require_once('util/isDownload.php');
-
 require_once('processors/csvFilterRowsByPIRcode.php');
 require_once('processors/csvToHtmlString.php');
 require_once('processors/csvToHtmlTable.php');
