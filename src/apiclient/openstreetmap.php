@@ -27,17 +27,16 @@ function getUserAgentString() {
     return $ua_string;
 }
 
-function wikidataGetCsvFromSparql($script) {
+function openstreetmapGetCsvFromSparql($script) {
     $client = curl_init();
 
     $request_headers = [];
-    $request_headers[] = 'Accept: text/csv';
     $request_headers[] = getUserAgentString();
     curl_setopt($client, CURLOPT_URL, getURL());
     curl_setopt($client, CURLOPT_POST, 1);
     curl_setopt($client, CURLOPT_HTTPHEADER, $request_headers);
     curl_setopt($client, CURLOPT_POSTFIELDS,
-                "query=" . urlencode($script));
+                "data=" . urlencode($script));
 
     curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
 
