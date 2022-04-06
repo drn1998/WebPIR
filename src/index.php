@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>WebPIR</title>
@@ -20,13 +21,13 @@
         <option value="htmlstring">HTML String</option>
 		  	</select><br/>
       <fieldset>
-        <input type="radio" id="mq" name="display" value="mq" checked="checked">
+        <input type="radio" name="display" value="mq" checked="checked" onchange="controlScrollspeedField()">
         <label for="mq"> Marquee</label>
-        <input type="radio" id="st" name="display" value="st">
-        <label for="vi"> Static</label>
+        <input type="radio" name="display" value="st" onchange="controlScrollspeedField()">
+        <label for="sts"> Static</label>
       </fieldset>
       <label for="speed">Speed of scrolling: </label>
-			<input type="text" name="speed" value="5">
+			<input type="text" name="speed" id="speed" value="5">
 			<br/>
 			<label for="pir">1st column satisfies PIR code: </label>
 			<input type="text" name="pir" minlength="1" maxlength="5">
@@ -34,5 +35,23 @@
 			<button type="submit" name="load" value="view">View</button>
       <button type="submit" name="load" value="download">Download</button>
         </form>
+        <script>
+          var speed_field;
+          var selection;
+
+          function controlScrollspeedField() {
+            speed_field = document.getElementById("speed");
+            selection = document.querySelector('input[name="display"]:checked').value;
+
+            if(selection == "mq") {
+              speed_field.removeAttribute("disabled");
+            }
+            if(selection == "st") {
+              speed_field.setAttribute("disabled", true);
+            }
+
+            return;
+          }
+        </script>
     </body>
 </html>
