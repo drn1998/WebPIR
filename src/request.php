@@ -16,10 +16,14 @@ if($_POST["load"] == "download") {
 	header('Content-type: text/html');
 }
 
-if($_POST["api"] == "wikidata")
-	$csv = wikidataGetCsvFromSparql($_POST["script"]);
-else if($_POST["api"] == "openstreetmap")
-	$csv = openstreetmapGetCsvFromOql($_POST["script"]);
+if($_POST["api"] == "wikidata") {
+	$client = new Wikidata_APIclient();
+	$csv = $client->getCSVbyScript($_POST["script"]);
+}
+else if($_POST["api"] == "openstreetmap") {
+	$client = new OpenStreetMap_APIclient();
+	$csv = $client->getCSVbyScript($_POST["script"]);
+}
 
 if(isset($_POST["pir"]))
     $csv = csvFilterRowsByPIRcode($csv, $_POST["pir"], $_POST["api"]);
