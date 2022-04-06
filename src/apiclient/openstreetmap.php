@@ -1,7 +1,7 @@
 <?php
 
 class OpenStreetMap_APIclient {
-  function getURL() {
+  private function getURL() {
       $config = parse_ini_file("config/openstreetmap.ini", true);
 
       $url = $config["connection"]["URL"];
@@ -12,7 +12,7 @@ class OpenStreetMap_APIclient {
       return $url;
   }
 
-  function getUA() {
+  private function getUA() {
       $config = parse_ini_file("config/openstreetmap.ini", true);
 
       $name = $config["user-agent"]["name"];
@@ -28,12 +28,12 @@ class OpenStreetMap_APIclient {
       return $ua_string;
   }
 
-  function getCSVbyScript($script) {
+  public function getCSVbyScript($script) {
       $client = curl_init();
 
       $request_headers = [];
-      $request_headers[] = this->getUA();
-      curl_setopt($client, CURLOPT_URL, this->getURL());
+      $request_headers[] = $this->getUA();
+      curl_setopt($client, CURLOPT_URL, $this->getURL());
       curl_setopt($client, CURLOPT_POST, 1);
       curl_setopt($client, CURLOPT_HTTPHEADER, $request_headers);
       curl_setopt($client, CURLOPT_POSTFIELDS,
