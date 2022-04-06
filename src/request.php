@@ -25,7 +25,7 @@ else if($_POST["api"] == "openstreetmap") {
 	$csv = $client->getCSVbyScript($_POST["script"]);
 }
 
-if(isset($_POST["pir"]) && isset($_POST["pir"]) != "")
+if(isset($_POST["pir"]) && $_POST["pir"] != "")
     $csv = csvFilterRowsByPIRcode($csv, $_POST["pir"], $_POST["api"]);
 
 if($_POST["format"] == "htmltable") {
