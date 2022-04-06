@@ -3,7 +3,7 @@
 require_once('remove_accents.php');
 
 function encode($input) {
-	$json = file_get_contents("../config/encode.json");
+	$json = file_get_contents("config/encode.json");
 	$code = json_decode($json, true);
 
 	$input = remove_accents($input);
