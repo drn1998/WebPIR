@@ -2,6 +2,7 @@
 
 require_once('apiclient/wikidata.php');
 require_once('apiclient/openstreetmap.php');
+require_once('apiclient/genericurl.php');
 
 require_once('processors/csvFilterRowsByPIRcode.php');
 require_once('processors/csvToHtmlString.php');
@@ -23,7 +24,7 @@ if($_POST["api"] == "wikidata") {
 } else if($_POST["api"] == "openstreetmap") {
 	$client = new OpenStreetMap_APIclient();
 	$csv = $client->getCSVbyScript($_POST["script"]);
-} else if($_POST["api"] == "csvurl") {
+} else if($_POST["api"] == "genericurl") {
 	$client = new GenericURL_APIclient();
 	$csv = $client->getCSVbyScript($_POST["script"]);
 }
