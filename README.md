@@ -7,7 +7,7 @@ The basic idea is to answer something by asking for a set of data that can unamb
 At this moment, it is sufficient to copy the content of the src directory into the webservers directory and have the server recognize "index.php" as the default page. You then have to edit the config file of the two API clients (wikidata.ini and openstreetmap.ini) to contain your name and phone/fax number to comply with the wikidata policy of providing contact data (for their convenience and possible need to contact you, they are also provided to OSM). The default values will not be accepted by the software and it will refuse a connection to the API endpoint. Please provide correct information so wikidata can contact you if the software or its amount of usage becomes an issue.
 
 # Try it out
-Usually, WebPIR is hosted at https://darius-runge.eu/pir. Feel free to try it out but please acknowledge the rate limiting imposed by wikidata.
+Usually, WebPIR is hosted at https://darius-runge.eu/pir. Feel free to try it out but please acknowledge the rate limiting imposed by wikidata. My latest, possibly unstable changes can be found at https://darius-runge.eu/pir_test.
 
 # Contact
 
