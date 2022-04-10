@@ -16,7 +16,7 @@
         <option value="openstreetmap">OpenStreetMap/OQL</option>
         </select><br/>
 			<label for="format">Output format</label>
-		  	<select name="format">
+		  	<select name="format" id="format" onchange="checkSSML()">
 				<option value="htmltable">HTML Table</option>
         <option value="htmlstring">HTML String</option>
         <option value="ssmlstring">SSML String</option>
@@ -33,8 +33,8 @@
 			<label for="pir">1st column satisfies PIR code: </label>
 			<input type="text" name="pir" minlength="1" maxlength="5">
 			<br/>
-			<button type="submit" name="load" value="view">View</button>
-      <button type="submit" name="load" value="download">Download</button>
+			<button type="submit" name="load" id="viewbutton" value="view">View</button>
+      <button type="submit" name="load" id="downloadbutton" value="download">Download</button>
         </form>
         <script>
           var speed_field;
@@ -49,6 +49,19 @@
             }
             if(selection == "st") {
               speed_field.setAttribute("disabled", true);
+            }
+
+            return;
+          }
+
+          function checkSSML() {
+            format_field = document.getElementById("format");
+            viewbtn = document.getElementById("viewbutton");
+
+            if(format_field.value == "ssmlstring") {
+              viewbtn.setAttribute("disabled", true);
+            } else {
+              viewbtn.removeAttribute("disabled");
             }
 
             return;
