@@ -51,6 +51,8 @@ if($_POST["display"] == "mq" && $_POST["format"] == "htmltable") {
 	htmlStringToPage($htmlBody, "Table");
 } else if($_POST["format"] == "ssmlstring") {
 	// TODO This should become an output processor
+	$filename = "output.ssml";
+	header('Content-disposition: attachment; filename=' . $filename);
 	header('Content-type: text/ssml');
 	echo($htmlBody);
 } else {
