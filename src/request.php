@@ -20,9 +20,11 @@ if($_POST["load"] == "download") {
 if($_POST["api"] == "wikidata") {
 	$client = new Wikidata_APIclient();
 	$csv = $client->getCSVbyScript($_POST["script"]);
-}
-else if($_POST["api"] == "openstreetmap") {
+} else if($_POST["api"] == "openstreetmap") {
 	$client = new OpenStreetMap_APIclient();
+	$csv = $client->getCSVbyScript($_POST["script"]);
+} else if($_POST["api"] == "csvurl") {
+	$client = new GenericURL_APIclient();
 	$csv = $client->getCSVbyScript($_POST["script"]);
 }
 
