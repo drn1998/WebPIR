@@ -6,6 +6,7 @@ require_once('apiclient/openstreetmap.php');
 require_once('processors/csvFilterRowsByPIRcode.php');
 require_once('processors/csvToHtmlString.php');
 require_once('processors/csvToHtmlTable.php');
+require_once('processors/csvToSsmlString.php');
 require_once('processors/htmlStringToMarquee.php');
 require_once('processors/htmlStringToPage.php');
 require_once('processors/htmlTableToMarqueeTable.php');
@@ -32,8 +33,10 @@ if($_POST["format"] == "htmltable") {
 	$htmlBody = csvToHtmlTable($csv, $_POST["api"]);
 } else if($_POST["format"] == "htmlstring") {
 	$htmlBody = csvToHtmlString($csv, $_POST["api"]);
+} else if($_POST["format"] == "ssmlstring") {
+	$htmlBody = csvToSsmlString($csv, $_POST["api"]);
 } else {
-	die("Invalid format set");
+	die("Bad format set!");
 }
 
 if($_POST["display"] == "mq" && $_POST["format"] == "htmltable") {
@@ -46,6 +49,10 @@ if($_POST["display"] == "mq" && $_POST["format"] == "htmltable") {
 	htmlStringToPage($htmlBody, $htmlTitle);
 } else if($_POST["display"] == "st" && $_POST["format"] == "htmltable") {
 	htmlStringToPage($htmlBody, "Table");
+} else if($_POST["format"] == "ssmlstring") {
+	// TODO This should become an output processor
+	header('Content-type: text/ssml');
+	echo($htmlBody);
 } else {
 	die("Not implemented or bad combination!");
 }

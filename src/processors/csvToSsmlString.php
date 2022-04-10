@@ -1,6 +1,6 @@
 <?php
 
-function csvToSsmlTable($csv, $format) {
+function csvToSsmlString($csv, $format) {
     $count = -2; // Check if generally true and ok
     $body = "";
     $conf = parse_ini_file("config/" . $format . ".ini", true);

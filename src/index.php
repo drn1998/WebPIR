@@ -19,6 +19,7 @@
 		  	<select name="format">
 				<option value="htmltable">HTML Table</option>
         <option value="htmlstring">HTML String</option>
+        <option value="ssmlstring">HTML String</option>
 		  	</select><br/>
       <fieldset>
         <input type="radio" name="display" value="mq" checked="checked" onchange="controlScrollspeedField()">
