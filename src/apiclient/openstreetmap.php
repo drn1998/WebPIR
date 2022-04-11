@@ -43,6 +43,19 @@ class OpenStreetMap_APIclient {
 
       $output = curl_exec($client);
 
+      if (!curl_errno($client)) {
+        switch ($http_code = curl_getinfo($client, CURLINFO_HTTP_CODE)) {
+          case 200:  # OK
+            break;
+          case 400:
+            die('HTTP Error 400: The most likely reason is an invalid OQL request.');
+            break;
+          default:
+            die('The API has returned a non-200 HTTP status code: ' . $http_code);
+            break;
+        }
+      }
+
       curl_close ($client);
 
       return $output;
