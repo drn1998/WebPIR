@@ -52,7 +52,7 @@ class Wikidata_APIclient {
             die('HTTP Error 400: The most likely reason is an invalid SPARQL request.');
             break;
           default:
-            die('The API has returned a non-200 HTTP status code: ', $http_code);
+            die('The API has returned a non-200 HTTP status code: ' . $http_code);
             break;
         }
       }
