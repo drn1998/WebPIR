@@ -14,9 +14,16 @@ require_once('processors/htmlStringToPage.php');
 require_once('processors/htmlTableToMarqueeTable.php');
 
 if($_POST["load"] == "download") {
-	$filename = 'output.html';	// How to give better file names?
+	if($_POST["format"] == "htmltable" || $_POST["format"] == "htmlstring") {
+			header('Content-type: text/html');
+			$filename = 'output.html';
+	}
+	else if($_POST["format"] == "ssmlstring") {
+			header('Content-type: text/ssml');
+			$filename = 'output.ssml';
+	}
+
 	header('Content-disposition: attachment; filename=' . $filename);
-	header('Content-type: text/html');
 }
 
 if($_POST["api"] == "wikidata") {
@@ -60,9 +67,6 @@ if($_POST["display"] == "mq" && $_POST["format"] == "htmltable") {
 	htmlStringToPage($htmlBody, "Table");
 } else if($_POST["format"] == "ssmlstring") {
 	// TODO This should become an output processor
-	$filename = "output.ssml";
-	header('Content-disposition: attachment; filename=' . $filename);
-	header('Content-type: text/ssml');
 	echo($htmlBody);
 } else {
 	die("Not implemented or bad combination!");
