@@ -15,7 +15,7 @@
         <option value="wikidata">Wikidata/SPARQL</option>
         <option value="openstreetmap">OpenStreetMap/OQL</option>
         <option value="genericurl">Generic/URL</option>
-        <option value="csvdata">Generic/CSV</option>
+        <option value="genericcsv">Generic/CSV</option>
         </select><br/>
 			<label for="format">Output format</label>
 		  	<select name="format" id="format" onchange="checkSSML()">
