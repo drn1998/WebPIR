@@ -1,7 +1,8 @@
 <?php
 
-function htmlStringToMarquee($html, $title, $scroll_speed) {
-    echo('
+function htmlStringToMarquee($html, $title, $scroll_speed)
+{
+    echo ('
     <!DOCTYPE html>
     <html>
         <head>
@@ -14,11 +15,7 @@ function htmlStringToMarquee($html, $title, $scroll_speed) {
             }
             </style>
         </head>
-        <body><p>' .
-        $title
-        . '</p><marquee behavior="scroll" scrollamount="' . $scroll_speed . '" bgcolor="#000088" style="color: #FFFFFF;">' .
-            $html
-            . '</marquee>
+        <body><p>' . $title . '</p><marquee behavior="scroll" scrollamount="' . $scroll_speed . '" bgcolor="#000088" style="color: #FFFFFF;">' . $html . '</marquee>
         </body>
         </html>');
 }

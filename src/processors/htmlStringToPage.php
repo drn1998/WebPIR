@@ -1,7 +1,8 @@
 <?php
 
-function htmlStringToPage($html, $title) {
-    echo('
+function htmlStringToPage($html, $title)
+{
+    echo ('
     <!DOCTYPE html>
     <html>
         <head>
@@ -15,11 +16,7 @@ function htmlStringToPage($html, $title) {
             }
             </style>
         </head>
-        <body><p>' .
-        $title
-        . '</p><p>' .
-            $html
-            . '</p>
+        <body><p>' . $title . '</p><p>' . $html . '</p>
         </body>
         </html>');
 }

@@ -1,20 +1,26 @@
 <?php
 
-function csvToHtmlTable($csv, $format) {
+function csvToHtmlTable($csv, $format)
+{
     $count = -2; // Check if generally true and ok
-    $body = "";
-    $conf = parse_ini_file("config/" . $format . ".ini", true);
-    $rows = explode(stripcslashes($conf["csv"]["line"]), $csv);
+    $body  = "";
+    $conf  = parse_ini_file("config/" . $format . ".ini", true);
+
+    $line_sep  = stripcslashes($conf["csv"]["line"]);
+    $field_sep = stripcslashes($conf["csv"]["field"]);
+    $field_exc = stripcslashes($conf["csv"]["except"]);
+
+    $rows  = explode($line_sep, $csv);
 
     $body .= "<table>";
 
-    foreach($rows as &$row){
-      $cells = str_getcsv($row, stripcslashes($conf["csv"]["field"]), stripcslashes($conf["csv"]["except"]));
-          $body .= "<tr>";
-          foreach($cells as &$cell)
-                $body .= "<td>" . $cell . "</td>";
-      $body .= "</tr>";
-      $count++;
+    foreach ($rows as &$row) {
+        $cells = str_getcsv($row, $field_sep, $field_exc);
+        $body .= "<tr>";
+        foreach ($cells as &$cell)
+            $body .= "<td>" . $cell . "</td>";
+        $body .= "</tr>";
+        $count++;
     }
     $body .= "</table>";
     //$body = "<b>Number of elements: " . $count . "</b>" . $body;
