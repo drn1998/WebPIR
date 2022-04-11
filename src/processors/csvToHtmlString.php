@@ -35,6 +35,11 @@ function csvToHtmlTitleString($csv, $format)
 {
     $body = "";
     $conf = parse_ini_file("config/" . $format . ".ini", true);
+
+    $line_sep  = stripcslashes($conf["csv"]["line"]);
+    $field_sep = stripcslashes($conf["csv"]["field"]);
+    $field_exc = stripcslashes($conf["csv"]["except"]);
+
     $rows = explode($line_sep, $csv);
 
     $body .= "<strong>";
