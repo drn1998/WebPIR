@@ -1,12 +1,14 @@
 <?php
 
 require_once('remove_accents.php');
+require_once('util/removeTextInParentheses.php');
 
 function encode($input)
 {
     $json = file_get_contents("config/encode.json");
     $code = json_decode($json, true);
 
+    $input = removeTextInParentheses($input);
     $input  = remove_accents($input);
     $input  = strtolower($input);
     // Move to remove_accents
@@ -20,7 +22,9 @@ function encode($input)
     $input  = str_replace("Ð", 'D', $input);
     $input  = str_replace("ð", 'd', $input);
 
-    $result = strtr($input, $code);
+    $input = strtr($input, $code);
+
+    $result = preg_replace('/[^0-9]/', '', $input);
     return $result;
 }
 
