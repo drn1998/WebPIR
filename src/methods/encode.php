@@ -19,7 +19,7 @@ function encode($input)
     $input  = str_replace("Æ", 'ae', $input);
     $input  = str_replace("Ð", 'D', $input);
     $input  = str_replace("ð", 'd', $input);
-    $input  = preg_replace('/[^a-z]/', '', $input);
+
     $result = strtr($input, $code);
     return $result;
 }
