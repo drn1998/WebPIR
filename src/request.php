@@ -26,16 +26,16 @@ if ($_POST["load"] == "download") {
 }
 
 if ($_POST["api"] == "wikidata") {
-    $client = new Wikidata_APIclient();
+    $client = new Wikidata();
     $csv    = $client->getCSVbyScript($_POST["script"]);
 } else if ($_POST["api"] == "openstreetmap") {
-    $client = new OpenStreetMap_APIclient();
+    $client = new OpenStreetMap();
     $csv    = $client->getCSVbyScript($_POST["script"]);
 } else if ($_POST["api"] == "genericurl") {
-    $client = new GenericURL_APIclient();
+    $client = new GenericURL();
     $csv    = $client->getCSVbyScript($_POST["script"]);
 } else if ($_POST["api"] == "genericcsv") {
-    $client = new GenericCSV_APIclient();
+    $client = new GenericCSV();
     $csv    = $client->getCSVbyScript($_POST["script"]);
 } else {
     die("Invalid API selected.");
