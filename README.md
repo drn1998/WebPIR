@@ -14,7 +14,7 @@ Usually, WebPIR is hosted at https://darius-runge.eu/pir. Feel free to try it ou
 # Contact
 
 Darius Runge  
-Postfach 3  
+Postfach 7  
 72669 Unterensingen  
 GERMANY
 
@@ -22,6 +22,5 @@ GERMANY
 
 Tel: +49 7022 5064970  
 Fax: +49 7022 5064971  
-Vox: +49 7022 5064998  (immediate connection to voice mail, without attempting to talk in person)
 
 E-Mail: contact@darius-runge.eu  
